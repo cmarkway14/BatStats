@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Game" representedClassName="Game" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="winlose" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gameToPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerToGame" inverseEntity="Player" syncable="YES"/>
+        <relationship name="gameToTeam" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="teamToGame" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="Player" syncable="YES" codeGenerationType="class">
+        <attribute name="ba" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="era" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="errors" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rbi" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="runs" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="walks" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="playerToGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameToPlayer" inverseEntity="Game" syncable="YES"/>
+        <relationship name="playerToTeam" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="teamToPlayer" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES" codeGenerationType="class">
+        <attribute name="teamname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="teamToGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameToTeam" inverseEntity="Game" syncable="YES"/>
+        <relationship name="teamToPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerToTeam" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Team" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="Player" positionX="-54" positionY="0" width="128" height="30"/>
+        <element name="Game" positionX="-36" positionY="9" width="128" height="30"/>
+    </elements>
 </model>
