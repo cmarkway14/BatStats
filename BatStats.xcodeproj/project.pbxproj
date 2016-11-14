@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B8EED911DD96A3300FCF1C0 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8EED901DD96A3300FCF1C0 /* LogInViewController.swift */; };
+		9B8EED931DD9781800FCF1C0 /* bat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B8EED921DD9781800FCF1C0 /* bat.jpeg */; };
 		BB31365B1DCFB0290083735F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31365A1DCFB0290083735F /* HomeViewController.swift */; };
 		BB31366A1DCFB2B50083735F /* Bosnian.png in Resources */ = {isa = PBXBuildFile; fileRef = BB31365D1DCFB2B50083735F /* Bosnian.png */; };
 		BB31366B1DCFB2B50083735F /* Catalan.png in Resources */ = {isa = PBXBuildFile; fileRef = BB31365E1DCFB2B50083735F /* Catalan.png */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B8EED901DD96A3300FCF1C0 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		9B8EED921DD9781800FCF1C0 /* bat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bat.jpeg; sourceTree = "<group>"; };
 		BB31365A1DCFB0290083735F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BB31365D1DCFB2B50083735F /* Bosnian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bosnian.png; sourceTree = "<group>"; };
 		BB31365E1DCFB2B50083735F /* Catalan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Catalan.png; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		BB56FA981DC9748800C60428 /* BatStats */ = {
 			isa = PBXGroup;
 			children = (
+				9B8EED921DD9781800FCF1C0 /* bat.jpeg */,
 				BB31365C1DCFB2B50083735F /* flags */,
 				BB56FA991DC9748800C60428 /* AppDelegate.swift */,
 				BB56FA9D1DC9748800C60428 /* Main.storyboard */,
@@ -125,6 +130,7 @@
 				BB31367B1DCFBF110083735F /* CalenderViewController.swift */,
 				BB31367D1DCFC3F00083735F /* RosterTableViewController.swift */,
 				BB31367F1DCFC8B10083735F /* SearchViewController.swift */,
+				9B8EED901DD96A3300FCF1C0 /* LogInViewController.swift */,
 			);
 			path = BatStats;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				BB31366B1DCFB2B50083735F /* Catalan.png in Resources */,
 				BB31366F1DCFB2B50083735F /* French.png in Resources */,
 				BB31366D1DCFB2B50083735F /* Danish.png in Resources */,
+				9B8EED931DD9781800FCF1C0 /* bat.jpeg in Resources */,
 				BB3136751DCFB2B50083735F /* Turkish.png in Resources */,
 				BB3136761DCFB2B50083735F /* Welsh.png in Resources */,
 			);
@@ -216,6 +223,7 @@
 			files = (
 				BB31367C1DCFBF110083735F /* CalenderViewController.swift in Sources */,
 				BB31367A1DCFBEE10083735F /* RosterViewController.swift in Sources */,
+				9B8EED911DD96A3300FCF1C0 /* LogInViewController.swift in Sources */,
 				BB3136801DCFC8B10083735F /* SearchViewController.swift in Sources */,
 				BB56FA9A1DC9748800C60428 /* AppDelegate.swift in Sources */,
 				BB3136781DCFB80B0083735F /* GraphViewController.swift in Sources */,
@@ -265,6 +273,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -315,6 +324,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

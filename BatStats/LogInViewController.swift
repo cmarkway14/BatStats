@@ -1,42 +1,42 @@
 //
-//  HomeViewController.swift
+//  LogInViewController.swift
 //  BatStats
 //
-//  Created by Curtis Markway on 11/6/16.
+//  Created by Murphy Basil Ward on 11/13/16.
 //  Copyright © 2016 Curtis Markway. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class LogInViewController: UIViewController {
 
-     var loggedIn = false
     
+    @IBOutlet weak var teamNameTextField: UITextField!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //App name can be change later if needed
-        title = "Home"
+
         // Do any additional setup after loading the view.
-    
-
-        
+    //if(you have text, image, and you pressed submit)
+  
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        //super.viewWillAppear(false)
-        if(loggedIn == false)
-        {
-            self.performSegue(withIdentifier: "createProfile", sender: self)
-            print("hi")
-        }
-        
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func importImageButton(_ sender: Any) {
+    }
+
+    @IBAction func submitButton(_ sender: Any) {
+        
+        
+    }
+
+
 
     /*
     // MARK: - Navigation
