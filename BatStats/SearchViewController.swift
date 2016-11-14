@@ -24,6 +24,10 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func changeView(_ sender: Any) {
+        
+        performSegue(withIdentifier: "testsegue", sender: self)
+    }
 
     /*
     // MARK: - Navigation
