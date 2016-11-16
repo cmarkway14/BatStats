@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Game" representedClassName="Game" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,6 +7,9 @@
         <attribute name="winlose" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="gameToPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerToGame" inverseEntity="Player" syncable="YES"/>
         <relationship name="gameToTeam" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="teamToGame" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="LoggedIn" representedClassName="LoggedIn" syncable="YES" codeGenerationType="class">
+        <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Player" representedClassName="Player" syncable="YES" codeGenerationType="class">
         <attribute name="ba" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -27,8 +30,9 @@
         <relationship name="teamToPlayer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerToTeam" inverseEntity="Player" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Team" positionX="-63" positionY="-18" width="128" height="30"/>
-        <element name="Player" positionX="-54" positionY="0" width="128" height="30"/>
         <element name="Game" positionX="-36" positionY="9" width="128" height="30"/>
+        <element name="Player" positionX="-54" positionY="0" width="128" height="30"/>
+        <element name="Team" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="LoggedIn" positionX="-54" positionY="81" width="128" height="60"/>
     </elements>
 </model>

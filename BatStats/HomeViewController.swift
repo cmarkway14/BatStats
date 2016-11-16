@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
 
-     var loggedIn = false
-    
+     var logIn = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //App name can be change later if needed
         title = "Home"
+
         // Do any additional setup after loading the view.
     
 
@@ -25,9 +27,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         //super.viewWillAppear(false)
-        if(loggedIn == false)
+        if(logIn == false)
         {
             self.performSegue(withIdentifier: "createProfile", sender: self)
+            logIn = true
             print("hi")
         }
         

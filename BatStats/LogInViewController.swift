@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LogInViewController: UIViewController {
 
@@ -32,10 +33,9 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func submitButton(_ sender: Any) {
-        
-        
+     self.dismiss(animated: true, completion: nil)
+     
     }
-
 
 
     /*

@@ -8,14 +8,23 @@
 
 import UIKit
 
-class RosterViewController: UIViewController {
+class RosterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
 
+    @IBOutlet weak var PositionPicker: UIPickerView!
+    var PickerData = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Roster"
         // Do any additional setup after loading the view.
         
         //Implement all of task manager functionality here
+        PickerData = ["Pitcher", "Catcher", "1B", "2B", "SS", "3B", "LF", "CF", "RF"]
+      
+        self.PositionPicker.delegate = self
+        self.PositionPicker.dataSource = self
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -27,7 +36,26 @@ class RosterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    //MARK: Data Sources
+  func numberOfComponents(in pickerView: UIPickerView) -> Int
+  {
+    return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return PickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return PickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(PickerData[row])
+    }
+    
+    
     /*
     // MARK: - Navigation
 
