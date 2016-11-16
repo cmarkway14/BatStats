@@ -322,7 +322,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="B66-88-vYc"/>
+                    <navigationItem key="navigationItem" title="Title" id="LQu-hi-cKq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmJ-O1-B8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
