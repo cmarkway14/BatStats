@@ -21,6 +21,41 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     
+        let teamName:String = String(describing: Team.self)
+        
+        let player:Player = NSEntityDescription.insertNewObject(forEntityName: "Player", into: DatabaseController.getContext()) as! Player
+        player.age = 18
+        player.firstName = "John"
+        player.lastName = "Smith"
+        player.atBats = 100
+        player.strikeOuts = 37
+        player.height = "6'04"
+        player.earnedRunAvg = 0.00
+        player.rbi = 30
+        player.stealAttempts = 5
+        
+        let team:Team = NSEntityDescription.insertNewObject(forEntityName: teamName, into: DatabaseController.getContext()) as! Team
+        
+        team.teamName = "Bulls"
+        player.team = team
+        
+        
+        DatabaseController.saveContext()
+        
+        let fetchRequest:NSFetchRequest<Player> = Player.fetchRequest()
+        
+        do{
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            print("Number of result: \(searchResults.count)")
+            
+            for result in searchResults as [Player]{
+                print("\(result.firstName!) \(result.lastName!)")
+            }
+
+        }
+        catch{
+            print("error: \(error)")
+        }
 
         
     }
@@ -31,7 +66,7 @@ class HomeViewController: UIViewController {
         {
             self.performSegue(withIdentifier: "createProfile", sender: self)
             logIn = true
-            print("hi")
+            //print("hi")
         }
         
     }

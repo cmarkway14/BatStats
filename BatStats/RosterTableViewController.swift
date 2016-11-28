@@ -17,7 +17,9 @@ class RosterTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+  //      let newPlayerButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: nil)
+        
+//self.navigationItem.rightBarButtonItem = newPlayerButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,14 +84,18 @@ class RosterTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
-
+    
+ //func createNewPlayer()
+  //{
+    //self.prepare(for: "", sender: self)
+   // }
 }
