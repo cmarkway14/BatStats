@@ -7,19 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
 class RosterTableViewController: UITableViewController {
 
+    var players = [Player]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        players = getPlayers()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+  //      let newPlayerButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: nil)
+        
+//self.navigationItem.rightBarButtonItem = newPlayerButton
     }
-
+    
+    func getContext() -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,23 +39,24 @@ class RosterTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        print(players.count)
+        return players.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "player", for: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = players[indexPath.row].firstName
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +93,26 @@ class RosterTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+    
+    func getPlayers() -> [Player]{
+        let fetchRequest = NSFetchRequest<Player>(entityName: "Player")
+        do{
+            let foundPlayer = try getContext().fetch(fetchRequest)
+            return foundPlayer
+        }catch{
+            print("we messed this up")
+        }
+        return [Player]()
+    }
+    
 
 }

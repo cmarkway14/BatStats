@@ -13,10 +13,28 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var loggedIn = false
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var controllerId = "LogIn"
+       
+        
+        
+        //if you've logged in before, based this on user core datas
+       // loggedIn = true
+        
+        if loggedIn == true
+        {
+            controllerId = "Home";
+        }
+    
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let initViewController: UIViewController = storyboard.instantiateViewController(withIdentifier: controllerId) as UIViewController
+        self.window?.rootViewController = initViewController
+        
         return true
     }
 
@@ -87,6 +105,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    class func getContext() -> NSManagedObjectContext{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+        
     }
 
 }

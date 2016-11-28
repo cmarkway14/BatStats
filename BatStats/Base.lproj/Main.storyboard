@@ -32,7 +32,7 @@
         <!--Roster View Controller-->
         <scene sceneID="dYc-2B-UNj">
             <objects>
-                <viewController id="CfY-pT-5qt" customClass="RosterViewController" customModule="BatStats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="CfY-pT-5qt" customClass="RosterViewController" customModule="BatStats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DPX-Sg-rHg"/>
                         <viewControllerLayoutGuide type="bottom" id="eIo-JY-LJS"/>
@@ -48,31 +48,99 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JK-TR-Mbh">
-                                <rect key="frame" x="0.0" y="110" width="133.5" height="30"/>
+                                <rect key="frame" x="0.0" y="110" width="135" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rI-3q-vxc">
-                                <rect key="frame" x="27.5" y="192" width="320" height="216"/>
-                                <accessibility key="accessibilityConfiguration" hint="Pick Multiple Posistions" label="Positions">
-                                    <accessibilityTraits key="traits" none="YES"/>
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                            </pickerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vci-zu-aev">
+                                <rect key="frame" x="67" y="267" width="240" height="348"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="7TW-fg-gLn"/>
+                                    <constraint firstAttribute="width" constant="240" id="VnY-tX-KmN"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="4Vg-By-HGA">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Vg-By-HGA" id="eUb-1H-OM7">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJX-si-mVM">
+                                <rect key="frame" x="0.0" y="186" width="135" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePic.png" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-30-TLJ">
+                                <rect key="frame" x="175" y="64" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="FdS-Ua-Mb6"/>
+                                    <constraint firstAttribute="width" constant="150" id="N6Y-Le-59G"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7L-Hq-TwH">
+                                <rect key="frame" x="227" y="229" width="46" height="30"/>
+                                <state key="normal" title="Import"/>
+                                <connections>
+                                    <action selector="importImage:" destination="CfY-pT-5qt" eventType="touchUpInside" id="F00-Mt-PwS"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o2p-Fy-K8J">
+                                <rect key="frame" x="0.0" y="148" width="135" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Leg-eR-pyN">
+                                <rect key="frame" x="0.0" y="224" width="135" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4rI-3q-vxc" firstAttribute="centerX" secondItem="V1Q-8A-hRA" secondAttribute="centerX" id="How-YF-Ffb"/>
+                            <constraint firstItem="Leg-eR-pyN" firstAttribute="leading" secondItem="V1Q-8A-hRA" secondAttribute="leadingMargin" constant="-16" id="1V2-XP-6Qp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gFX-30-TLJ" secondAttribute="trailing" constant="34" id="3nE-gv-hzD"/>
+                            <constraint firstItem="o2p-Fy-K8J" firstAttribute="leading" secondItem="V1Q-8A-hRA" secondAttribute="leadingMargin" constant="-16" id="7IS-ua-7nP"/>
+                            <constraint firstItem="WJX-si-mVM" firstAttribute="width" secondItem="1JK-TR-Mbh" secondAttribute="width" id="Bvq-5s-Vdh"/>
                             <constraint firstItem="1JK-TR-Mbh" firstAttribute="top" secondItem="DPX-Sg-rHg" secondAttribute="bottom" constant="46" id="Maa-e4-Xv0"/>
-                            <constraint firstItem="4rI-3q-vxc" firstAttribute="top" secondItem="1JK-TR-Mbh" secondAttribute="bottom" constant="52" id="NKH-Ar-eTq"/>
+                            <constraint firstItem="Leg-eR-pyN" firstAttribute="top" secondItem="WJX-si-mVM" secondAttribute="bottom" constant="8" id="O5b-JC-msy"/>
+                            <constraint firstItem="gFX-30-TLJ" firstAttribute="leading" secondItem="o2p-Fy-K8J" secondAttribute="trailing" constant="40" id="T8a-nN-g9X"/>
+                            <constraint firstItem="vci-zu-aev" firstAttribute="top" secondItem="gFX-30-TLJ" secondAttribute="bottom" constant="53" id="UTX-Ba-y9w"/>
+                            <constraint firstItem="gFX-30-TLJ" firstAttribute="leading" secondItem="wlL-IY-kQ6" secondAttribute="trailing" constant="40.5" id="VCW-bw-EoK"/>
                             <constraint firstItem="1JK-TR-Mbh" firstAttribute="leading" secondItem="V1Q-8A-hRA" secondAttribute="leadingMargin" constant="-16" id="XMA-fv-PfH"/>
+                            <constraint firstItem="V7L-Hq-TwH" firstAttribute="top" secondItem="gFX-30-TLJ" secondAttribute="bottom" constant="15" id="YPH-Ze-5pp"/>
+                            <constraint firstItem="o2p-Fy-K8J" firstAttribute="top" secondItem="1JK-TR-Mbh" secondAttribute="bottom" constant="8" id="Z3Y-ux-ZXX"/>
+                            <constraint firstItem="gFX-30-TLJ" firstAttribute="leading" secondItem="WJX-si-mVM" secondAttribute="trailing" constant="40" id="eHw-2b-qnB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V7L-Hq-TwH" secondAttribute="trailing" constant="86" id="ed3-Ue-t7j"/>
+                            <constraint firstItem="gFX-30-TLJ" firstAttribute="leading" secondItem="1JK-TR-Mbh" secondAttribute="trailing" constant="40" id="egB-WU-f2L"/>
+                            <constraint firstItem="gFX-30-TLJ" firstAttribute="top" secondItem="DPX-Sg-rHg" secondAttribute="bottom" id="fxs-ha-LZZ"/>
+                            <constraint firstItem="eIo-JY-LJS" firstAttribute="top" secondItem="vci-zu-aev" secondAttribute="bottom" constant="8" id="jtk-un-OYL"/>
+                            <constraint firstItem="o2p-Fy-K8J" firstAttribute="width" secondItem="1JK-TR-Mbh" secondAttribute="width" id="kCE-ar-U0t"/>
+                            <constraint firstItem="vci-zu-aev" firstAttribute="centerX" secondItem="V1Q-8A-hRA" secondAttribute="centerX" id="kHy-8v-cUg"/>
                             <constraint firstItem="wlL-IY-kQ6" firstAttribute="top" secondItem="DPX-Sg-rHg" secondAttribute="bottom" constant="8" id="lif-xE-Jlo"/>
+                            <constraint firstItem="WJX-si-mVM" firstAttribute="leading" secondItem="V1Q-8A-hRA" secondAttribute="leadingMargin" constant="-16" id="o8I-bK-nY6"/>
+                            <constraint firstItem="WJX-si-mVM" firstAttribute="top" secondItem="o2p-Fy-K8J" secondAttribute="bottom" constant="8" id="sos-Ag-moe"/>
                             <constraint firstItem="wlL-IY-kQ6" firstAttribute="leading" secondItem="V1Q-8A-hRA" secondAttribute="leadingMargin" constant="-16" id="tJH-BW-js9"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="PositionPicker" destination="4rI-3q-vxc" id="wvy-dn-OHG"/>
+                        <outlet property="playerAgeTextField" destination="Leg-eR-pyN" id="CZB-yW-LZe"/>
+                        <outlet property="playerFirstNameTextField" destination="wlL-IY-kQ6" id="hge-mp-PCq"/>
+                        <outlet property="playerHeightTextField" destination="o2p-Fy-K8J" id="2iA-cv-ZsM"/>
+                        <outlet property="playerLastNameTextField" destination="1JK-TR-Mbh" id="8At-3T-8V4"/>
+                        <outlet property="playerWeightTextField" destination="WJX-si-mVM" id="8xB-l2-jGS"/>
+                        <outlet property="positionTableView" destination="vci-zu-aev" id="KvG-9I-QcO"/>
+                        <outlet property="profilePicture" destination="gFX-30-TLJ" id="oRJ-gq-7LN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hn9-Ds-cde" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,7 +150,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="782-Xy-rgN">
             <objects>
-                <tabBarController id="JPA-7g-8WJ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" id="JPA-7g-8WJ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bUq-0Z-kls"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="T9X-it-Bzu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -103,7 +171,7 @@
         <!--Log In View Controller-->
         <scene sceneID="qmv-Be-wRl">
             <objects>
-                <viewController id="Rru-1h-SPN" customClass="LogInViewController" customModule="BatStats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogIn" id="Rru-1h-SPN" customClass="LogInViewController" customModule="BatStats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nv2-mS-arX"/>
                         <viewControllerLayoutGuide type="bottom" id="daj-bP-8Ah"/>
@@ -132,6 +200,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButton:" destination="Rru-1h-SPN" eventType="touchUpInside" id="t5p-94-m8h"/>
+                                    <segue destination="JPA-7g-8WJ" kind="show" identifier="goHome" id="Oxj-V9-bxa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ4-Kb-KoY">
@@ -227,12 +296,13 @@
                     <navigationItem key="navigationItem" id="amN-xR-NpX"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="Rru-1h-SPN" kind="presentation" identifier="createProfile" id="yBo-kl-fXY"/>
+                        <outlet property="teamEmblem" destination="HYP-6Y-Au9" id="8H4-hm-PHk"/>
+                        <outlet property="teamName" destination="Rb6-pU-Y1Q" id="0ya-4D-kf7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dci-rk-fTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-822" y="-367"/>
+            <point key="canvasLocation" x="-783" y="-122"/>
         </scene>
         <!--Graph View Controller-->
         <scene sceneID="AgO-Na-7r2">
@@ -298,7 +368,7 @@
         <!--Roster-->
         <scene sceneID="1y9-2E-Qo7">
             <objects>
-                <tableViewController title="Roster" id="UHn-lB-qTo" sceneMemberID="viewController">
+                <tableViewController title="Roster" id="UHn-lB-qTo" customClass="RosterTableViewController" customModule="BatStats" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="35Z-O8-puv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,7 +392,13 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="LQu-hi-cKq"/>
+                    <navigationItem key="navigationItem" title="My Roster" id="4Pz-2l-OVm">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="uat-R4-kiS">
+                            <connections>
+                                <segue destination="CfY-pT-5qt" kind="show" identifier="createPlayer" id="3RA-em-h0c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmJ-O1-B8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,16 +407,12 @@
         <!--Roster-->
         <scene sceneID="RcX-bM-jNa">
             <objects>
-                <navigationController toolbarHidden="NO" id="I9j-3f-zii" sceneMemberID="viewController">
+                <navigationController id="I9j-3f-zii" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Roster" id="Va5-Dl-kmP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0bA-Rj-GQQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Jmv-7v-UjS">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="UHn-lB-qTo" kind="relationship" relationship="rootViewController" id="OsK-CT-Xg2"/>
                     </connections>
@@ -418,6 +490,10 @@
     <resources>
         <image name="Bosnian.png" width="2000" height="1000"/>
         <image name="Croatian.png" width="2000" height="1000"/>
+        <image name="ProfilePic.png" width="225" height="225"/>
         <image name="bat.jpeg" width="228" height="221"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3RA-em-h0c"/>
+    </inferredMetricsTieBreakers>
 </document>
